@@ -15,10 +15,16 @@
     float: left;
     padding: 15px;
 }
+body{
+background-color: #FFEBCD;
+}
+
 html {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
 }
+
+
 .header {
     background-color: #008000;
     color: #ffffff;
@@ -46,9 +52,8 @@ a{		   font-family: Arial, Helvetica, sans-serif;
 		    text-decoration: none;
 }
 
-
 .aside {
-    background-color: #a05a2c;
+    background-color: #D2B48C;
     padding: 3px;
     color: #ffffff;
     text-align: center;
@@ -138,8 +143,10 @@ font-size: smaller;
 
 <div class="header">
 <h3>&nbsp;&nbsp;&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "codes/"> CODES </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/"> ADMIN </a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+
+<a href = "codes/"> CODES </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/"> ADMIN </a> 
 </h3>
 </div>
 
@@ -149,7 +156,7 @@ font-size: smaller;
 	  echo $_GET['id']; 
 	  $idselected = $_GET['id']; 
 	  $photo = "photos/nophoto.png";
-			$carrots = "img/1carrots.png";
+			$tree= "img/1tree.png";
 		if(!$idselected){
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
@@ -162,6 +169,7 @@ font-size: smaller;
 					echo " <br /><span style= color:#a05a2c>**** <br /> **** <br /> **** <br />****  </span> ";
 					echo "<br /> <span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
 					
+					echo "<br /><span style= color:#cc0000;> May 18-20, 2018 <br />Washington State University, Pullman, WA </span>";
 		}
 		include 'db/db.php';
 		include 'db/error.php'; 
@@ -179,24 +187,24 @@ font-size: smaller;
 		echo "<div id = content>";	
 		while ($row = mysqli_fetch_row($result)){
 			
-			if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
+			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $tree= "img/1tree.png";      }
+			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
+			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
 			
-			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png"; }
-			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png"; }
+			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
+			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
 			
-			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
-			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 			
 		
 									
 			echo "<div class = dataoutline>";
 				echo "<div class =label >FOOD TYPE: ";		
-					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $carrots></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $tree></div>";
 				echo "<div class =label >FOOD ID	: ";
 					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";		
 				echo "<div class =label >FERTILIZER QUANTITY : ";
@@ -241,8 +249,7 @@ font-size: smaller;
 <div class="col-3 col-m-12">
   <div class="aside">
 MATERIAL CODES<br />
- <ul>
-	 
+ <ul>	 
 	 <li><a href= "index.php?id=1001" class= "menu">FLOORING:1001</a> </li>
 	<li><a href= "index.php?id=1002" class= "menu">FLOORING:1002</a> </li>
 	<li><a href= "index.php?id=1003" class= "menu">FLOORING:1003</a> </li>
@@ -257,8 +264,6 @@ MATERIAL CODES<br />
 	<li><a href= "index.php?id=3003" class= "menu">INSULATION:3003</a> </li>
 	<hr />
 	<li><a href= "selectall.php" class= "menu">SHOW ALL DATA</a> </li>
-	 
-	
   </ul>
   <br />
   </div>

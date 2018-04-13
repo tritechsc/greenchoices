@@ -73,40 +73,57 @@ echo "$timedate <br>";
 if(isset($_POST['submit'])){
 	$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
-	$food_input = $_POST['food'];
-	$food_id_input = $_POST['food-id'];
-	$fert_quantity_input = $_POST['fert-quantity'];
-	$fert_type_input = $_POST['fert-type'];
-	$pest_quantity_input = $_POST['pest-quantity'];
-	$pest_type_input = $_POST['pest-type'];
-	$pest_interval_input = $_POST['pest-interval'];
-	$water_quantity_input = $_POST['water-quantity'];
-	$water_type_input = $_POST['water-type'];
-	$water_interval_input = $_POST['water-interval'];
-	$del_method_input = $_POST['del-method'];
-	$del_distance_input = $_POST['del-distance'];
-	$del_waste_input = $_POST['del-waste'];
-	$gmo_input = $_POST['gmo'];
+	$catagory_input = $_POST['catagory'];
+	$id_input = $_POST['id'];
+	$material_input = $_POST['material'];
+	$location_input = $_POST['fert-type'];
+	$delivery_input = $_POST['pest-quantity'];
+	$eco_impact_input = $_POST['pest-type'];
+	$delivery_disctance_input = $_POST['pest-interval'];
+	$co2_footprint_input = $_POST['water-quantity'];
+	$labor_source_input = $_POST['water-type'];
+	$hazardous_chemicals_input= $_POST['water-interval'];
+	$durability_input = $_POST['del-method'];
+	$rf_rating_input = $_POST['del-distance'];
 	$comments_input = $_POST['comments'];
 	}
 /*
 	echo "1 : $last_input <br />";
 	echo "2 : $first_input<br />";
-	echo "3 : $food_input <br />";
-	echo "4 : $food_id_input <br />";
-	echo "5 : $fert_quantity_input<br />"; 
-	echo "6 : $fert_type_input <br />";
-	echo "7 : $pest_quantity_input<br />";
-	echo "8 : $pest_type_input <br />";
-	echo "9 : $pest_interval_input <br />";
-	echo "10: $water_quantity_input <br />";
-	echo "11: $water_type_input <br />";
-	echo "12: $water_interval_input <br />";
-	echo "13: $del_method_input <br />";
-	echo "14: $del_distance_input <br />";
-	echo "15: $del_waste_input <br />";
-	echo "16: $gmo_input <br />";
-	echo "18: $comments_input <br />";
+	echo "3 : $catagory_input <br />";
+	echo "4 : $id_input <br />";
+	echo "5 : $material_input<br />"; 
+	echo "6 : $location_input <br />";
+	echo "7 : $delivery_input<br />";
+	echo "8 : $eco_impact_input <br />";
+	echo "9 : $delivery_disctance_input <br />";
+	echo "10: $co2_footprint_input <br />";
+	echo "11: $labor_source_input <br />";
+	echo "12: $hazardous_chemicals_input <br />";
+	echo "13: $durability_input <br />";
+	echo "14: $rf_rating_input <br />";
+	echo "15: $comments_input <br />";
+	
+	CREATE TABLE IF NOT EXISTS `materials` (
+  `last` varchar(64) NOT NULL,
+  `first` varchar(1) NOT NULL,
+  `catagory` varchar(16) NOT NULL,
+  `id` varchar(16) NOT NULL,
+  `material` varchar(64) NOT NULL,
+  `location` varchar(64) NOT NULL,
+  `delivery_method` varchar(64) NOT NULL,
+  `eco_impact` varchar(64) NOT NULL,
+  `delivery_distance` varchar(64) NOT NULL,
+  `co2_footprint` varchar(64) NOT NULL,
+  `labor_source` varchar(64) NOT NULL,
+  `hazardous_chemicals` varchar(64) NOT NULL,
+  `durability` varchar(64) NOT NULL,
+  `rf_rating` varchar(64) NOT NULL,
+  `comments` text NOT NULL,
+  `date_time` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	
+	
 */
 //	echo "<hr />";
 	$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
