@@ -17,6 +17,7 @@
 }
 html {
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
 }
 .header {
     background-color: #008000;
@@ -47,7 +48,7 @@ a{		   font-family: Arial, Helvetica, sans-serif;
 
 
 .aside {
-    background-color: #008000;
+    background-color: #a05a2c;
     padding: 3px;
     color: #ffffff;
     text-align: center;
@@ -156,10 +157,10 @@ font-size: smaller;
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
 					
-					echo "<br />Think about what you're purchasing and <br />how it affects the ENVIRONMENT.";
+					echo "<br /><span style= color:#a05a2c>Think about what you're purchasing and <br />how it affects the ENVIRONMENT.</span>";
 					echo "<br />";
-					echo " <br /><span style= color:#008f00> Brett Davidson <br />Omar Romero <br />Marisol Paquini <br />Meagan Larsen  </span> ";
-					echo "<br /> <span style= color:#ff6629>Tri-Tech Skills - Center Construction Trades.</span>";
+					echo " <br /><span style= color:#a05a2c>**** <br /> **** <br /> **** <br />****  </span> ";
+					echo "<br /> <span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
 					
 		}
 		include 'db/db.php';
@@ -178,25 +179,20 @@ font-size: smaller;
 		echo "<div id = content>";	
 		while ($row = mysqli_fetch_row($result)){
 			
-			if (($row[3]) == 3001){$photo = "photos/apples.jpg"; $carrots = "img/3carrots.png";      }
-			if (($row[3]) == 8000){$photo = "photos/apples.jpg"; $carrots = "img/1carrots.png";      }
-			if (($row[3]) == 9000){$photo = "photos/apples.jpg"; $carrots = "img/5carrots.png";      }
+			if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $carrots = "img/1tree.png";      }
 			
-			if (($row[3]) == 4011){$photo = "photos/bananas.jpg"; $carrots = "img/3carrots.png"; }
-			if (($row[3]) == 8011){$photo = "photos/bananas.jpg"; $carrots = "img/1carrots.png";      }
-			if (($row[3]) == 9011){$photo = "photos/bananas.jpg"; $carrots = "img/5carrots.png";      }
+			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png"; }
+			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $carrots = "img/1tree.png";      }
 			
-			if (($row[3]) == 4061){$photo = "photos/lettuce.jpg"; $carrots = "img/3carrots.png";      }
-			if (($row[3]) == 8061){$photo = "photos/lettuce.jpg"; $carrots = "img/1carrots.png";      }
-			if (($row[3]) == 9061){$photo = "photos/lettuce.jpg"; $carrots = "img/3carrots.png";      }
+			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
+			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $carrots = "img/1tree.png";      }
 			
-			if (($row[3]) == 4072){$photo = "photos/potatoes.jpg"; $carrots = "img/3carrots.png";      }
-			if (($row[3]) == 8072){$photo = "photos/potatoes.jpg"; $carrots = "img/1carrots.png";      }
-			if (($row[3]) == 9072){$photo = "photos/potatoes.jpg"; $carrots = "img/5carrots.png";      }
-			
-			if (($row[3]) == 4064){$photo = "photos/tomatoes.jpg"; $carrots = "img/3carrots.png";      }
-			if (($row[3]) == 8064){$photo = "photos/tomatoes.jpg"; $carrots = "img/1carrots.png";      }
-			if (($row[3]) == 9064){$photo = "photos/tomatoes.jpg";$carrots = "img/5carrots.png";      }
+		
 									
 			echo "<div class = dataoutline>";
 				echo "<div class =label >FOOD TYPE: ";		

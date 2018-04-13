@@ -39,18 +39,28 @@ div.smalltext{
 
 <body>
 <div id = "content">
-FOOD DATA INPUT
+MATERIAL DATA INPUT
 <br />
 <?php
 
-$connection = mysql_connect($host, $dbuser, $dbpass) or die("Could not connect to database server"); 
-mysql_select_db($dbname, $connection) or die("Could not select database"); 
+$connection = mysqli_connect($host, $dbuser, $dbpass) or die("Could not connect to database server"); 
+mysqli_select_db($connection,$dbname) or die("Could not select database"); 
 
-$result = mysql_query ("SELECT CURDATE();", $connection);
-	$row = mysql_fetch_row($result);$date = $row[0];
+//$result = mysql_query ("SELECT CURDATE();", $connection);
+//	$row = mysql_fetch_row($result);$date = $row[0];
    
-	$result = mysql_query ("SELECT CURTIME();", $connection);
-	$row = mysql_fetch_row($result);$time = $row[0];
+//	$result = mysql_query ("SELECT CURTIME();", $connection);
+//	$row = mysql_fetch_row($result);$time = $row[0];
+	
+	
+	$result = mysqli_query ($connection,"SELECT CURDATE();");
+	$row = mysqli_fetch_row($result);
+	$date = $row[0];
+   
+	$result = mysqli_query ($connection, "SELECT CURTIME();");
+	$row = mysqli_fetch_row($result);
+	$time = $row[0];
+	
 	
 	echo "$date $time <br>";
 
@@ -99,7 +109,7 @@ if(isset($_POST['submit'])){
 	echo "18: $comments_input <br />";
 */
 //	echo "<hr />";
-	$insert0 = "INSERT INTO `fooddata` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
+	$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
 	$insert1 = "('".$last_input; // 1
 	$insert1 = 	$insert1."','".$first_input;   //2
 	$insert1 = 	$insert1."','".$food_input;   //3
@@ -130,64 +140,108 @@ if(isset($_POST['submit'])){
 	echo "DATA SUBMITTED $timedate;";
 	//echo "<hr />";
 	//$result = @ mysql_query($sql_insert, $connection)  or showerror();	
-	$result = @ mysql_query($sql_insert, $connection);				
-	mysql_close();
+	$result = @ mysqli_query($sql_insert, $connection);				
+	mysqli_close($connection);
 ?>
 <form action="#" method="post">
 	<pre>
-	USER INPUT NAME
+	USER INPUT NAME <hr />
 	LAST NAME 				<input type="text" name="last" maxlength="64"> 
-	FIRST INITIAL 			<input type="text" name="first" maxlength="1"> 
-	FOOD TYPE				<select name="food">
-							<option value="APPLE">APPLE</option>
-							<option value="BANANA">BANANA</option>
-							<option value="LETTUCE">LETTUCE</option>
-							<option value="POTATO">POTATO</option>
-							<option value="TOMATO">TOMATO</option>
+	FIRST INITIAL				<input type="text" name="first" maxlength="1"> 
+	CATAGORY				<select name="food">
+							<option value="FLOORING">FLOORING</option>
+							<option value="COUNTER_TOPS">COUNTER TOP</option>
+							<option value="INSULATION">INSULATION</option>
 							</select>
-							<br />
-	FOOD ID 				<input type="text" name="food-id" maxlength="64"> 
-	FERTILIZER QUANTITY 	<input type="text" name="fert-quantity" maxlength="64"> 
-	FERTILIZER TYPE  		<input type="text" name="fert-type" maxlength="64"> 
-	<hr />
-	PESTICIDE QUANTITY 		<input type="text" name="pest-quantity" maxlength="64"> 
-	PESTICIDE TYPE 			<input type="text" name="pest-type" maxlength="64"> 
-	PESTICIDE INTERVAL 		<input type="text" name="pest-interval" maxlength="64"> 
-	<hr />
-	WATER QUANTITY 			<input type="text" name="water-quantity" maxlength="64"> 
-	WATER TYPE 				<input type="text" name="water-type" maxlength="64"> 
-	WATER INTERVAL 			<input type="text" name="water-interval" maxlength="64"> 
-		<hr />
-	DELIVERY METHOD 		<input type="text" name="del-method" maxlength="64"> 
-	DELIVERY DISTANCE 		<input type="text" name="del-distance" maxlength="64"> 
-	DELIVERY WASTE % 		<input type="text" name="del-waste" maxlength="64"> 
-	<hr /> 
-	GENETICALLY MODIFIED ORGANISM (GMO) <br />
-	GMO 					<input type="text" name="gmo" maxlength="64"> <br />
+	ID 						<input type="text" name="id" maxlength="64"> 
+	MATERIAL				<input type="text" name="fert-quantity" maxlength="64"> 
+	LOCATION				<input type="text" name="fert-type" maxlength="64"> 
+	DELIVERY_METHOD 		<input type="text" name="pest-quantity" maxlength="64"> 
+	ECO_IMPACT 				<input type="text" name="pest-type" maxlength="64"> 
+	DELIVERY_DISTANCE 		<input type="text" name="pest-interval" maxlength="64"> 
+	C02_FOOTPRINT			<input type="text" name="water-quantity" maxlength="64"> 
+	LABOR_SOURCE 			<input type="text" name="water-type" maxlength="64"> 
+	HAZARDOUS_CHEMICALS 	<input type="text" name="water-interval" maxlength="64"> 
+	DURABILITY		 		<input type="text" name="del-method" maxlength="64"> 
+	RF_RATING		 		<input type="text" name="del-distance" maxlength="64"> 
 	COMMENTS   				<textarea rows="4" cols="50" name="comments" >Type comments or remove this this text.</textarea>
 </pre>
 <input type="submit" name="submit" value="Submit" />
 </form>
 <pre>
 	<div class = "smalltext">
-1		LAST NAME				
-2		FIRST INITIAL 			
-3		FOOD TYPE		
-4		FOOD ID		
-5		FERTILIZER QUANTITY 	
-6		FERTILIZER TYPE  		
-7		PESTICIDE QUANTITY 		
-8		PESTICIDE TYPE 			
-9		PESTICIDE INTERVAL 		
-10		WATER QUANTITY 			
-11		WATER TYPE 				
-12		WATER INTERVAL 			
-13		DELIVERY METHOD 		
-14		DELIVERY DISTANCE 		
-15		DELIVERY WASTE % 
-16		GMO 
-17 		COMMENTS
-18		DATE AND TIME		'
+		Material type
+ID
+Location
+Delivery method
+Eco impact of waste
+Delivery distance
+Carbon dioxide footprint
+Labor source human impact
+Hazardous chemicals
+Durability
+RF rating/in
+		
+		
+		
+1	LAST NAME				
+2	FIRST INITIAL 			
+3	CATEGORY
+4	MATERIAL
+5	ID
+6	LOCATION
+7	DELIVERY_METHOD
+8	ECO_IMPACT
+9	DELIVERY_DISTANCE
+10	CARBON_DIOXIDE_FOOTPRINT
+11	LABOR_SOURCE
+12	HAZARDOUS_CHEMICALS
+13	DURABILITY
+14	RF_RATING
+15 	COMMENTS
+16	DATE AND TIME
+
+
+CREATE TABLE IF NOT EXISTS `materials` (
+  `last` varchar(64) NOT NULL,
+  `first` varchar(1) NOT NULL,
+  `catagory` varchar(16) NOT NULL,
+  `id` varchar(16) NOT NULL,
+  `material` varchar(64) NOT NULL,
+  `location` varchar(64) NOT NULL,
+  `delivery_method` varchar(64) NOT NULL,
+  `eco_impact` varchar(64) NOT NULL,
+  `delivery_distance` varchar(64) NOT NULL,
+  `co2_footprint` varchar(64) NOT NULL,
+  `labor_source` varchar(64) NOT NULL,
+  `hazardous_chemicals` varchar(64) NOT NULL,
+  `durability` varchar(64) NOT NULL,
+  `rf_rating` varchar(64) NOT NULL,
+  `comments` text NOT NULL,
+  `date_time` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+1	LAST NAME				
+2	FIRST INITIAL 			
+3	CATEGORY
+4	ID
+5	MATERIAL	
+6	LOCATION
+7	DELIVERY_METHOD
+8	ECO_IMPACT
+9	DELIVERY_DISTANCE
+10	CARBON_DIOXIDE_FOOTPRINT
+11	LABOR_SOURCE
+12	HAZARDOUS_CHEMICALS
+13	DURABILITY
+14	RF_RATING
+15 	COMMENTS
+16	DATE AND TIME	
+
+
+
+		'
 </div>
 </pre>
 
