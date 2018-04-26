@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `materials` (
   `hazardous_chemicals` varchar(64) NOT NULL,
   `durability` varchar(64) NOT NULL,
   `rf_rating` varchar(64) NOT NULL,
+  `rating` varchar(1) NOT NULL,
   `comments` text NOT NULL,
   `date_time` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
