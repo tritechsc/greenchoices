@@ -166,8 +166,8 @@ font-size: smaller;
 
 					echo "<br /><span style= color:#a05a2c>Think about what you're purchasing and <br />how it affects the ENVIRONMENT.</span>";
 					echo "<br />";
-					echo " <br /><span style= color:#a05a2c>**** <br /> **** <br /> **** <br />****  </span> ";
-					echo "<br /> <span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
+					echo " <br /><span style= color:#a05a2c> Talmage Jacoson<br /> Nickolas <br /> Salvador Corona <br />Brian Leon  </span> ";
+					echo "<br /> <br /><span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
 
 					echo "<br /><span style= color:#cc0000;> May 18-20, 2018 <br />Washington State University, Pullman, WA </span>";
 		}
