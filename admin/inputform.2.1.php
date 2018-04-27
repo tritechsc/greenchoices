@@ -132,7 +132,7 @@ if(isset($_POST['submit'])){
 //	echo "<hr />";
 	//$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
 	//('COLEMAN', 'C', 'Z', '1000', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'COMMENT', '0424');
-	$insert0 = "INSERT INTO `building.materials` (`last`, `first`, `catagory`, `id`, `material`, `location`, `delivery_method`, `eco_impact`, `delivery_distance`, `co2_footprint`, `labor_source`, `hazardous_chemicals`, `durability`, `rf_rating`, `rating`, `comments`, `date_time`) VALUES ";
+	$insert0 = "INSERT INTO `materials` (`last`, `first`, `catagory`, `id`, `material`, `location`, `delivery_method`, `eco_impact`, `delivery_distance`, `co2_footprint`, `labor_source`, `hazardous_chemicals`, `durability`, `rf_rating`, `rating`, `comments`, `date_time`) VALUES ";
 	$insert1 = "('".$last_input; // 1
 	$insert1 = 	$insert1."','".$first_input;   //2
 	$insert1 = 	$insert1."','".$catagory_input;   //3
@@ -158,15 +158,15 @@ if(isset($_POST['submit'])){
 	echo "<hr />";
  echo "$sql_insert";
  	echo "<hr />";
-$result =  mysqli_query($sql_insert, $connection)  or showerror();
-	 //$result = mysqli_query($sql_insert, $connection);
+//$result =  mysqli_query($sql_insert, $connection)  or showerror();
+	 $result = mysqli_query($connection,$sql_insert);
 	mysqli_close($connection);
 ?>
 <form action="#" method="post">
 	<pre>
 	USER INPUT NAME <hr />
 	LAST NAME 				<input type="text" name="last" maxlength="64">
-	FIRST INITIAL				<input type="text" name="first" maxlength="1">
+	FIRST INITIAL			<input type="text" name="first" maxlength="1">
 	CATAGORY				<select name="catagory">
 											<option value="FLOORING">FLOORING</option>
 											<option value="COUNTER_TOPS">COUNTER TOP</option>

@@ -213,7 +213,7 @@ font-size: smaller;
 					echo "<span style=color:#000;font-weight:bold>$row[5] </span></div>";
 				echo "<div class =label >DELIVERY METHOD : ";
 					echo "<span style=color:#000;font-weight:bold>$row[6] </span></div>";
-				echo "<div class =label >ECOLOGICAL IMPACT : ";
+				echo "<div class =label >ECOLOGICAL IMPACT Ecological impact : ";
 					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";
 				echo "<div class =label >DELIVERY DISTANCE : ";
 					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";
@@ -229,6 +229,10 @@ font-size: smaller;
 					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";
 				echo "<div class =label >COMMENTS : ";
 					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
+				echo "<div class =label >GMO  :  ";
+					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
+				echo "<div class =label >CARBON DIOXIDE (CO<sub>2</sub>) : ";
+					echo "<span style=color:#000;font-weight:bold>$row[16] </span></div>";
 				echo "$row[0] $row[1]";
 
 				echo "</div><br />";
@@ -259,10 +263,6 @@ MATERIAL CODES<br />
 	<li><a href= "index.php?id=3002" class= "menu">INSULATION:3002</a> </li>
 	<li><a href= "index.php?id=3003" class= "menu">INSULATION:3003</a> </li>
 	<hr />
-  <li><a href= "index.php?id=4001" class= "menu">WINDOW:4001</a> </li>
-	<li><a href= "index.php?id=4002" class= "menu">WINDOW:4002</a> </li>
-	<li><a href= "index.php?id=4003" class= "menu">WINDOW:4003</a> </li>
-  <hr />
 	<li><a href= "selectall.php" class= "menu">SHOW ALL DATA</a> </li>
   </ul>
   <br />
