@@ -74,20 +74,20 @@ top:10px;
 }
 
 div.label {
-	background-color:#fff;	
+	background-color:#fff;
 	color: #777;
 	border-style: solid;
     border-color: #ddd #ddd;
     padding: 3px;
-	
+
 }
 div.dataoutline{
-	background-color:#ddd;	
+	background-color:#ddd;
 	color: #000;
 	border-style: solid;
     border-color: #ddd #ddd;
     padding: 3px;
-	
+
 }
 
 
@@ -132,79 +132,71 @@ div.dataoutline{
 
 <?php
 		include 'db/db.php';
-		include 'db/error.php'; 
-		
+		include 'db/error.php';
+
 		$connection = mysqli_connect($host,$dbuser,$dbpass);
 		mysqli_select_db($connection,$dbname);
-		$sql = "select * from food.fooddata";
+		$sql = "select * from building.materials";
 		$result = mysqli_query ($connection,$sql);
 		$therows = mysqli_num_rows($result);
 		//echo "$therows items selected. <br />";//debug
-		echo "<div id = content>";	
+		echo "<div id = content>";
 		while ($row = mysqli_fetch_row($result)){
 			$photo = "photos/nophoto.png";
 				$photo = "photos/nophoto.png";
-			if (($row[3]) == 3001)$photo = "photos/apples.jpg";
-			if (($row[3]) == 8000)$photo = "photos/apples.jpg";
-			if (($row[3]) == 9000)$photo = "photos/apples.jpg";
-			
-			if (($row[3]) == 4011)$photo = "photos/bananas.jpg";
-			if (($row[3]) == 8011)$photo = "photos/bananas.jpg";
-			if (($row[3]) == 9011)$photo = "photos/bananas.jpg";
-			
-			if (($row[3]) == 4061)$photo = "photos/lettuce.jpg";
-			if (($row[3]) == 8061)$photo = "photos/lettuce.jpg";
-			if (($row[3]) == 9061)$photo = "photos/lettuce.jpg";
-			
-			if (($row[3]) == 4072)$photo = "photos/potatoes.jpg";
-			if (($row[3]) == 8072)$photo = "photos/potatoes.jpg";
-			if (($row[3]) == 9072)$photo = "photos/potatoes.jpg";
-			
-			if (($row[3]) == 4064)$photo = "photos/tomatoes.jpg";
-			if (($row[3]) == 8064)$photo = "photos/tomatoes.jpg";
-			if (($row[3]) == 9064)$photo = "photos/tomatoes.jpg";
-			
+        if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
+  			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $tree= "img/1tree.png";      }
+  			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
+  			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
+
+  			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png"; }
+  			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
+  			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
+
+  			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+  			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+  			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+
 			echo "<div class = dataoutline>";
-				echo "<div class =label >FOOD TYPE: ";		
+				echo "<div class =label >FOOD TYPE: ";
 					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo></div>";
 				echo "<div class =label >FOOD ID	: ";
-					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";		
+					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";
 				echo "<div class =label >FERTILIZER QUANTITY : ";
-					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";	
-				echo "<div class =label >FERTILIZER TYPE : ";	
+					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";
+				echo "<div class =label >FERTILIZER TYPE : ";
 					echo "<span style=color:#000;font-weight:bold>$row[5] </span></div>";
-				echo "<div class =label >PESTICIDE QUANTITY : ";	
+				echo "<div class =label >PESTICIDE QUANTITY : ";
 					echo "<span style=color:#000;font-weight:bold>$row[6] </span></div>";
-				echo "<div class =label >PESTICIDE TYPE : ";	
-					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";		
+				echo "<div class =label >PESTICIDE TYPE : ";
+					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";
 				echo "<div class =label >PESTICIDE INTERVAL : ";
-					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";		
-				echo "<div class =label >WATER QUANTITY  : ";	
-					echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";	
+					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";
+				echo "<div class =label >WATER QUANTITY  : ";
+					echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";
 				echo "<div class =label >WATER TYPE : ";
-					echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";					
+					echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";
 				echo "<div class =label >WATER INTERVAL : ";
-					echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";	
+					echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";
 				echo "<div class =label >DELIVERY METHOD  : ";
-					echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";		
+					echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";
 				echo "<div class =label >DELIVERY DISTANCE  : ";
-					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";	
+					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";
 				echo "<div class =label >DELIVERY WASTE % : ";
-					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";	
+					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
 				echo "<div class =label >GMO  :  ";
 					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
 				echo "<div class =label >CARBON DIOXIDE (CO<sub>2</sub>) : ";
 					echo "<span style=color:#000;font-weight:bold>$row[16] </span></div>";
 				echo "$row[0] $row[1]";
-			
+
 				echo "</div><br />";
 		}
 	echo "</div>";
 		mysqli_close($connection);
-	
+
 ?>
 </div>
 
 </body>
 </html>
-

@@ -80,20 +80,20 @@ top:10px;
 }
 
 div.label {
-	background-color:#fff;
+	background-color:#fff;	
 	color: #777;
 	border-style: solid;
     border-color: #ddd #ddd;
     padding: 3px;
-
+	
 }
 div.dataoutline{
-	background-color:#ddd;
+	background-color:#ddd;	
 	color: #000;
 	border-style: solid;
     border-color: #ddd #ddd;
     padding: 3px;
-
+	
 }
 
 
@@ -126,7 +126,7 @@ div.dataoutline{
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-
+    
     sup {
 vertical-align: super;
 font-size: smaller;
@@ -142,19 +142,19 @@ font-size: smaller;
 <body>
 
 <div class="header">
-<h3>&nbsp;&nbsp;&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project
+<h3>&nbsp;&nbsp;&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-<a href = "codes/"> CODES </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/"> ADMIN </a>
+<a href = "codes/"> CODES </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/"> ADMIN </a> 
 </h3>
 </div>
 
 <div class="row">
 <div class="col-6 col-m-9">
 	  <?php
-	  echo $_GET['id'];
-	  $idselected = $_GET['id'];
+	  echo $_GET['id']; 
+	  $idselected = $_GET['id']; 
 	  $photo = "photos/nophoto.png";
 			$tree= "img/1tree.png";
 		if(!$idselected){
@@ -163,93 +163,93 @@ font-size: smaller;
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
-
+					
 					echo "<br /><span style= color:#a05a2c>Think about what you're purchasing and <br />how it affects the ENVIRONMENT.</span>";
 					echo "<br />";
 					echo " <br /><span style= color:#a05a2c>**** <br /> **** <br /> **** <br />****  </span> ";
 					echo "<br /> <span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
-
+					
 					echo "<br /><span style= color:#cc0000;> May 18-20, 2018 <br />Washington State University, Pullman, WA </span>";
 		}
 		include 'db/db.php';
-		include 'db/error.php';
+		include 'db/error.php'; 
 		//if (!($connection = mysqli_connect($host,$user, $pass))) die("Could not connect to database");
 		//	mysqli_select_db( $connection,"stream");
 		$connection = mysqli_connect($host,$dbuser,$dbpass);
 		//mysqli_select_db($connection,$dbname);
 		mysqli_select_db($connection,$dbname);
-		$sql = "select * from building.materials where id = $idselected";
-		//SELECT * FROM `fooddata` WHERE food_id = 2001
+		$sql = "select * from food.fooddata where food_id = $idselected";
+		//SELECT * FROM `fooddata` WHERE food_id = 2001 
 		$result = mysqli_query ($connection,$sql);
 		//$therows = mysqli_fetch_row($result);
 		$therows = mysqli_num_rows($result);
 		//echo "$therows items selected. <br />";//debug
-		echo "<div id = content>";
+		echo "<div id = content>";	
 		while ($row = mysqli_fetch_row($result)){
-
+			
 			if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $tree= "img/1tree.png";      }
 			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-
+			
 			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png"; }
 			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
-
+			
 			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
-
-
-
+			
+		
+									
 			echo "<div class = dataoutline>";
-				echo "<div class =label >FOOD TYPE: ";
+				echo "<div class =label >FOOD TYPE: ";		
 					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $tree></div>";
 				echo "<div class =label >FOOD ID	: ";
-					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";		
 				echo "<div class =label >FERTILIZER QUANTITY : ";
-					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";
-				echo "<div class =label >FERTILIZER TYPE : ";
+					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";	
+				echo "<div class =label >FERTILIZER TYPE : ";	
 					echo "<span style=color:#000;font-weight:bold>$row[5] </span></div>";
-				echo "<div class =label >PESTICIDE QUANTITY : ";
+				echo "<div class =label >PESTICIDE QUANTITY : ";	
 					echo "<span style=color:#000;font-weight:bold>$row[6] </span></div>";
-				echo "<div class =label >PESTICIDE TYPE : ";
-					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";
+				echo "<div class =label >PESTICIDE TYPE : ";	
+					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";		
 				echo "<div class =label >PESTICIDE INTERVAL : ";
-					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";
-				echo "<div class =label >WATER QUANTITY  : ";
-					echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";		
+				echo "<div class =label >WATER QUANTITY  : ";	
+					echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";	
 				echo "<div class =label >WATER TYPE : ";
-					echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";					
 				echo "<div class =label >WATER INTERVAL : ";
-					echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";	
 				echo "<div class =label >DELIVERY METHOD  : ";
-					echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";		
 				echo "<div class =label >DELIVERY DISTANCE  : ";
-					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";	
 				echo "<div class =label >DELIVERY WASTE % : ";
-					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
+					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";	
 				echo "<div class =label >GMO  :  ";
 					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
 				echo "<div class =label >CARBON DIOXIDE (CO<sub>2</sub>) : ";
 					echo "<span style=color:#000;font-weight:bold>$row[16] </span></div>";
 				echo "$row[0] $row[1]";
-
+			
 				echo "</div><br />";
 		}
 	echo "</div>";
 		mysqli_close($connection);
-
+	
 ?>
-
+	
 	  </p>
-
+ 
  </div>
 
 <div class="col-3 col-m-12">
   <div class="aside">
 MATERIAL CODES<br />
- <ul>
+ <ul>	 
 	 <li><a href= "index.php?id=1001" class= "menu">FLOORING:1001</a> </li>
 	<li><a href= "index.php?id=1002" class= "menu">FLOORING:1002</a> </li>
 	<li><a href= "index.php?id=1003" class= "menu">FLOORING:1003</a> </li>
