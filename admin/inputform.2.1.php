@@ -158,8 +158,8 @@ if(isset($_POST['submit'])){
 	echo "<hr />";
  echo "$sql_insert";
  	echo "<hr />";
-//$result = @ mysqli_query($sql_insert, $connection)  or showerror();
-	 $result = mysqli_query($sql_insert, $connection);
+$result =  mysqli_query($sql_insert, $connection)  or showerror();
+	 //$result = mysqli_query($sql_insert, $connection);
 	mysqli_close($connection);
 ?>
 <form action="#" method="post">
