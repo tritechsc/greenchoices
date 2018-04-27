@@ -42,7 +42,8 @@ div.smalltext{
 MATERIAL DATA INPUT
 <br />
 <?php
-
+echo " host dbuser dbpass <br />";
+echo "$host $dbuser $dbpass <br />";
 $connection = mysqli_connect($host, $dbuser, $dbpass) or die("Could not connect to database server");
 mysqli_select_db($connection,$dbname) or die("Could not select database");
 
@@ -51,7 +52,6 @@ mysqli_select_db($connection,$dbname) or die("Could not select database");
 
 //	$result = mysql_query ("SELECT CURTIME();", $connection);
 //	$row = mysql_fetch_row($result);$time = $row[0];
-
 
 	$result = mysqli_query ($connection,"SELECT CURDATE();");
 	$row = mysqli_fetch_row($result);
@@ -71,6 +71,7 @@ echo "$timedate <br>";
 
 
 if(isset($_POST['submit'])){
+	echo" SUMMIT DEBUG";
 	$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
 	$catagory_input = $_POST['catagory'];
@@ -113,7 +114,7 @@ if(isset($_POST['submit'])){
   `id` varchar(16) NOT NULL,
   `material` varchar(64) NOT NULL,
   `location` varchar(64) NOT NULL,
-  `delivery_method` varchar(64) NOT NULL,
+  `delivery_method` varchar(64) NOT NUL	//L,
   `eco_impact` varchar(64) NOT NULL,
   `delivery_distance` varchar(64) NOT NULL,
   `co2_footprint` varchar(64) NOT NULL,
@@ -130,8 +131,8 @@ if(isset($_POST['submit'])){
 */
 //	echo "<hr />";
 	//$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
-	$insert0 = "INSERT INTO `materials` (`last`, `first`, `catagory`, `id`, `material`, `location`, `delivery_method`, `eco_impact`, `delivery_distance`, `co2_footprint`, `labor_source`, `hazardous_chemicals`, `durability`, `rf_rating`, `rating`, `comments`, `date_time`) VALUES ";
 	//('COLEMAN', 'C', 'Z', '1000', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'COMMENT', '0424');
+	$insert0 = "INSERT INTO `building.materials` (`last`, `first`, `catagory`, `id`, `material`, `location`, `delivery_method`, `eco_impact`, `delivery_distance`, `co2_footprint`, `labor_source`, `hazardous_chemicals`, `durability`, `rf_rating`, `rating`, `comments`, `date_time`) VALUES ";
 	$insert1 = "('".$last_input; // 1
 	$insert1 = 	$insert1."','".$first_input;   //2
 	$insert1 = 	$insert1."','".$catagory_input;   //3
@@ -150,18 +151,15 @@ if(isset($_POST['submit'])){
 	$insert1 = 	$insert1."','".$comments_input;  //17
 	$insert1 = 	$insert1."','".$timedate;  //18
 	$insert1 = 	$insert1."');";
-	// 1 $last_input 2 $first_input  3 $food_input 4  $food_id_input 5   $fert_quantity_input  6 $fert_type_input
-	//7 $pest_quantity_input  8 $pest_type_input  9 $pest_interval_input 10  $water_quantity_input
-	//11 $water_type_input  12 $water_interval_input 13 $del_method_input 14  $del_distance_input
-	//15 $del_waste_input  16 $gmo_input 17  $comments_input 18 date
-	//('1', '2', 'apple', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '170326  0521');
-	//echo "$str18 <br />";
+
 	$sql_insert = $insert0.$insert1;
 	//echo "<hr />";
 	echo "DATA SUBMITTED $timedate;";
-	//echo "<hr />";
-	//$result = @ mysql_query($sql_insert, $connection)  or showerror();
-	$result = @ mysqli_query($sql_insert, $connection);
+	echo "<hr />";
+ echo "$sql_insert";
+ 	echo "<hr />";
+//$result = @ mysqli_query($sql_insert, $connection)  or showerror();
+	$result = mysqli_query($sql_insert, $connection);
 	mysqli_close($connection);
 ?>
 <form action="#" method="post">
@@ -192,9 +190,9 @@ if(isset($_POST['submit'])){
 </form>
 <pre>
 	<div class = "smalltext">
-		
+
 		post code
-		$last_input = 	$_POST['last'];
+	$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
 	$catagory_input = $_POST['catagory'];
 	$id_input = $_POST['id'];
@@ -210,8 +208,8 @@ if(isset($_POST['submit'])){
 	$rf_rating_input = $_POST['rf_rating'];
 	$rating_input = $_POST['rating'];
 	$comments_input = $_POST['comments'];
-		
-		
+
+
 		Material type
 ID
 Location
@@ -283,9 +281,6 @@ CREATE TABLE IF NOT EXISTS `materials` (
 15 	COMMENTS
 16	DATE AND TIME
 
-
-
-		'
 </div>
 </pre>
 

@@ -143,7 +143,7 @@ if(isset($_POST['submit'])){
 	$insert1 = 	$insert1."','".$labor_source_input;  //11
 	$insert1 = 	$insert1."','".$hazardous_chemicals_input ;  //12
 	$insert1 = 	$insert1."','".$durability_input;  //13
-	$insert1 = 	$insert1."','".$del_distance_input;  //14
+	$insert1 = 	$insert1."','".$delivery_distance_input;  //14
 	$insert1 = 	$insert1."','".$rf_rating_input;  //15
 	$insert1 = 	$insert1."','".$rating_input;  //16
 	$insert1 = 	$insert1."','".$comments_input;  //17
@@ -191,7 +191,7 @@ if(isset($_POST['submit'])){
 </form>
 <pre>
 	<div class = "smalltext">
-		
+
 		post code
 		$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
@@ -209,8 +209,8 @@ if(isset($_POST['submit'])){
 	$rf_rating_input = $_POST['rf_rating'];
 	$rating_input = $_POST['rating'];
 	$comments_input = $_POST['comments'];
-		
-		
+
+
 		Material type
 ID
 Location
