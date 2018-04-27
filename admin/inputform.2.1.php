@@ -129,7 +129,9 @@ if(isset($_POST['submit'])){
 
 */
 //	echo "<hr />";
-	$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
+	//$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
+	$insert0 = "INSERT INTO `materials` (`last`, `first`, `catagory`, `id`, `material`, `location`, `delivery_method`, `eco_impact`, `delivery_distance`, `co2_footprint`, `labor_source`, `hazardous_chemicals`, `durability`, `rf_rating`, `rating`, `comments`, `date_time`) VALUES ";
+	//('COLEMAN', 'C', 'Z', '1000', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'COMMENT', '0424');
 	$insert1 = "('".$last_input; // 1
 	$insert1 = 	$insert1."','".$first_input;   //2
 	$insert1 = 	$insert1."','".$catagory_input;   //3
@@ -143,7 +145,6 @@ if(isset($_POST['submit'])){
 	$insert1 = 	$insert1."','".$labor_source_input;  //11
 	$insert1 = 	$insert1."','".$hazardous_chemicals_input ;  //12
 	$insert1 = 	$insert1."','".$durability_input;  //13
-	$insert1 = 	$insert1."','".$del_distance_input;  //14
 	$insert1 = 	$insert1."','".$rf_rating_input;  //15
 	$insert1 = 	$insert1."','".$rating_input;  //16
 	$insert1 = 	$insert1."','".$comments_input;  //17
