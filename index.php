@@ -16,7 +16,7 @@
     padding: 15px;
 }
 body{
-background-color: #FFEBCD;
+background-color: #deebda;
 }
 
 html {
@@ -26,9 +26,16 @@ html {
 
 
 .header {
-    background-color: #D2B48C;
+    background-color: #84c1bc;
     color: #ffffff;
     padding: 1px;
+}
+.footer {
+    background-color: #84c1bc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
 }
 .menu ul {
     list-style-type: none;
@@ -53,7 +60,7 @@ a{		   font-family: Arial, Helvetica, sans-serif;
 }
 
 .aside {
-    background-color: #D2B48C;
+    background-color: #84c1bc;
     padding: 3px;
     color: #ffffff;
     text-align: center;
@@ -61,13 +68,7 @@ a{		   font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.footer {
-    background-color: #008000;
-    color: #ffffff;
-    text-align: center;
-    font-size: 12px;
-    padding: 5px;
-}
+
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
@@ -145,7 +146,7 @@ font-size: smaller;
 
 <div class="header">
     <h3>  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
-&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project
+&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 

@@ -11,7 +11,7 @@ include 'db/error.php';
 <style>
 body {margin: 0; padding: 0;
 background-color: #ffffff;
-color:#996633;
+color:#000;
 font-family:"Arial","sans-serif";color:#700070;font-size:14px;}
 pre{margin: 0; padding: 0;font-family:"Arial","sans-serif";color:#000000;font-size:14px;}
 
@@ -39,12 +39,11 @@ div.smalltext{
 
 <body>
 <div id = "content">
-	  <a href = "../greenchoices/" class= "menu" ><img src = "../img/home.png"> </a>
+	  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "../img/home.png"> </a>
 MATERIAL DATA INPUT
 <br />
 <?php
-echo " host dbuser dbpass <br />";
-echo "$host $dbuser $dbpass <br />";
+//echo " host dbuser dbpass <br />"; //echo "$host $dbuser $dbpass <br />";
 $connection = mysqli_connect($host, $dbuser, $dbpass) or die("Could not connect to database server");
 mysqli_select_db($connection,$dbname) or die("Could not select database");
 
@@ -175,96 +174,7 @@ if(isset($_POST['submit'])){
 </form>
 <pre>
 	<div class = "smalltext">
-
-		post code
-	$last_input = 	$_POST['last'];
-	$first_input = 	$_POST['first'];
-	$catagory_input = $_POST['catagory'];
-	$id_input = $_POST['id'];
-	$material_input = $_POST['material'];
-	$location_input = $_POST['location'];
-	$delivery_input = $_POST['delivery'];
-	$eco_impact_input = $_POST['eco_impact'];
-	$delivery_disctance_input = $_POST['deivery_distance'];
-	$co2_footprint_input = $_POST['co2'];
-	$labor_source_input = $_POST['labor'];
-	$hazardous_chemicals_input= $_POST['hazardous'];
-	$durability_input = $_POST['durability'];n/inputform.2.1.php#
-	$rf_rating_input = $_POST['rf_rating'];
-	$rating_input = $_POST['rating'];
-	$comments_input = $_POST['comments'];
-
-
-		Material type
-ID
-Location
-Delivery method
-Eco impact of waste
-Delivery distance
-Carbon dioxide footprint
-Labor source human impact
-Hazardous chemicals
-Durability
-RF rating/in
-
-
-
-1	LAST NAME
-2	FIRST INITIAL
-3	CATEGORY
-4	MATERIAL
-5	ID
-6	LOCATION
-7	DELIVERY_METHOD
-8	ECO_IMPACT
-9	DELIVERY_DISTANCE
-10	CARBON_DIOXIDE_FOOTPRINT
-11	LABOR_SOURCE
-12	HAZARDOUS_CHEMICALS
-13	DURABILITY
-14	RF_RATING
-15	RATING
-16 	COMMENTS
-17	DATE AND TIME
-
-
-CREATE TABLE IF NOT EXISTS `materials` (
-  `last` varchar(64) NOT NULL,
-  `first` varchar(1) NOT NULL,
-  `catagory` varchar(16) NOT NULL,
-  `id` varchar(16) NOT NULL,
-  `material` varchar(64) NOT NULL,
-  `location` varchar(64) NOT NULL,
-  `delivery_method` varchar(64) NOT NULL,
-  `eco_impact` varchar(64) NOT NULL,
-  `delivery_distance` varchar(64) NOT NULL,
-  `co2_footprint` varchar(64) NOT NULL,
-  `labor_source` varchar(64) NOT NULL,
-  `hazardous_chemicals` varchar(64) NOT NULL,
-  `durability` varchar(64) NOT NULL,
-  `rf_rating` varchar(64) NOT NULL,
-	`rating` varchar(1) NOT NULL,
-  `comments` text NOT NULL,
-  `date_time` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-1	LAST NAME
-2	FIRST INITIAL
-3	CATEGORY
-4	ID
-5	MATERIAL
-6	LOCATION
-7	DELIVERY_METHOD
-8	ECO_IMPACT
-9	DELIVERY_DISTANCE
-10	CARBON_DIOXIDE_FOOTPRINT
-11	LABOR_SOURCE
-12	HAZARDOUS_CHEMICALS
-13	DURABILITY
-14	RF_RATING
-15 	COMMENTS
-16	DATE AND TIME
+			NOTES:
 
 </div>
 </pre>
