@@ -26,7 +26,7 @@ html {
 
 
 .header {
-    background-color: #008000;
+    background-color: #D2B48C;
     color: #ffffff;
     padding: 1px;
 }
@@ -141,8 +141,11 @@ font-size: smaller;
 </head>
 <body>
 
+
+
 <div class="header">
-<h3>&nbsp;&nbsp;&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project
+    <h3>  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
+&nbsp;The Green Builder : Tri-Tech Skills Center WSU Imagine Tomorrow Project
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 

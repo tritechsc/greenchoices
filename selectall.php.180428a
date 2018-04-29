@@ -126,7 +126,7 @@ div.dataoutline{
 <body>
 
 <div class="row">
-  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
+  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "img/home.png"></a>
 </div>
 <div class = "row">
 <div class="col-m-12">
@@ -160,36 +160,40 @@ div.dataoutline{
   			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
   			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 
-        echo "<div class = dataoutline>";
-          echo "<div class =label >CATAGORY : ";
-            echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $tree></div>";
-          echo "<div class =label >ID	: ";
-            echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";
-          echo "<div class =label >MATERIAL : ";
-            echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";
-          echo "<div class =label >LOCATION : ";
-            echo "<span style=color:#000;font-weight:bold>$row[5] </span></div>";
-          echo "<div class =label >DELIVERY METHOD : ";
-            echo "<span style=color:#000;font-weight:bold>$row[6] </span></div>";
-          echo "<div class =label >ECOLOGICAL IMPACT : ";
-            echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";
-          echo "<div class =label >DELIVERY DISTANCE : ";
-            echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";
-          echo "<div class =label >CARBON DIOXIDE FOOTPRINT  : ";
-            echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";
-          echo "<div class =label >LABOR SOURCE HUMAN IMPACT : ";
-            echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";
-          echo "<div class =label >HAZARDOUS CHEMICALS : ";
-            echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";
-          echo "<div class =label >DURABILITY : ";
-            echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";
-          echo "<div class =label >R-VALUE RATING/IN  : ";
-            echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";
-          echo "<div class =label >COMMENTS : ";
-            echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
-          echo "$row[0] $row[1]";
+			echo "<div class = dataoutline>";
+				echo "<div class =label >FOOD TYPE: ";
+					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo></div>";
+				echo "<div class =label >FOOD ID	: ";
+					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";
+				echo "<div class =label >FERTILIZER QUANTITY : ";
+					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";
+				echo "<div class =label >FERTILIZER TYPE : ";
+					echo "<span style=color:#000;font-weight:bold>$row[5] </span></div>";
+				echo "<div class =label >PESTICIDE QUANTITY : ";
+					echo "<span style=color:#000;font-weight:bold>$row[6] </span></div>";
+				echo "<div class =label >PESTICIDE TYPE : ";
+					echo "<span style=color:#000;font-weight:bold>$row[7] </span></div>";
+				echo "<div class =label >PESTICIDE INTERVAL : ";
+					echo "<span style=color:#000;font-weight:bold>$row[8] </span></div>";
+				echo "<div class =label >WATER QUANTITY  : ";
+					echo "<span style=color:#000;font-weight:bold>$row[9] </span></div>";
+				echo "<div class =label >WATER TYPE : ";
+					echo "<span style=color:#000;font-weight:bold>$row[10] </span></div>";
+				echo "<div class =label >WATER INTERVAL : ";
+					echo "<span style=color:#000;font-weight:bold>$row[11] </span></div>";
+				echo "<div class =label >DELIVERY METHOD  : ";
+					echo "<span style=color:#000;font-weight:bold>$row[12] </span></div>";
+				echo "<div class =label >DELIVERY DISTANCE  : ";
+					echo "<span style=color:#000;font-weight:bold>$row[13] </span></div>";
+				echo "<div class =label >DELIVERY WASTE % : ";
+					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
+				echo "<div class =label >GMO  :  ";
+					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
+				echo "<div class =label >CARBON DIOXIDE (CO<sub>2</sub>) : ";
+					echo "<span style=color:#000;font-weight:bold>$row[16] </span></div>";
+				echo "$row[0] $row[1]";
 
-          echo "</div><br />";
+				echo "</div><br />";
 		}
 	echo "</div>";
 

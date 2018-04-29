@@ -39,6 +39,7 @@ div.smalltext{
 
 <body>
 <div id = "content">
+	  <a href = "../greenchoices/" class= "menu" ><img src = "../img/home.png"> </a>
 MATERIAL DATA INPUT
 <br />
 <?php
@@ -75,7 +76,7 @@ if(isset($_POST['submit'])){
 	$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
 	$catagory_input = $_POST['catagory'];
-	$id_input = $_POST['id'];</span>
+	$id_input = $_POST['id'];
 	$material_input = $_POST['material'];
 	$location_input = $_POST['location'];
 	$delivery_input = $_POST['delivery'];
@@ -90,22 +91,6 @@ if(isset($_POST['submit'])){
 	$comments_input = $_POST['comments'];
 	}
 /*
-	echo "1 : $last_input <br />";
-	echo "2 : $first_input<br />";
-	echo "3 : $catagory_input <br />";
-	echo "4 : $id_input <br />";
-	echo "5 : $material_input<br />";
-	echo "6 : $location_input <br />";
-	echo "7 : $delivery_input<br />";
-	echo "8 : $eco_impact_input <br />";
-	echo "9 : $delivery_disctance_input <br />";
-	echo "10: $co2_footprint_input <br />";
-	echo "11: $labor_source_input <br />";
-	echo "12: $hazardous_chemicals_input <br />";
-	echo "13: $durability_input <br />";
-	echo "14: $rf_rating_input <br />";
-	echo "15: $rating_input <br />";
-	echo "16: $comments_input <br />";
 
 	CREATE TABLE IF NOT EXISTS `materials` (
   `last` varchar(64) NOT NULL,
@@ -155,17 +140,15 @@ if(isset($_POST['submit'])){
 	$sql_insert = $insert0.$insert1;
 	//echo "<hr />";
 	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
-	echo "<hr /> DATA SUBMITTED $timedate; <hr />";
-	echo "</h1><h3>";
+	echo "<hr /> DATA SUBMITTED $timedate; <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
  echo "$sql_insert";
- 	echo "</h3></span><hr />";
+ 	echo "</h4></span><hr />";
 //$result =  mysqli_query($sql_insert, $connection)  or showerror();
 	 $result = mysqli_query($connection,$sql_insert);
 	mysqli_close($connection);
 ?>
 <form action="#" method="post">
 	<pre>
-	USER INPUT NAME <hr />
 	LAST NAME					<input type="text" name="last" maxlength="64">
 	FIRST INITIAL			<input type="text" name="first" maxlength="1">
 	CATAGORY				<select name="catagory">
