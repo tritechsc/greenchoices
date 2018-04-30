@@ -157,11 +157,12 @@ font-size: smaller;
 <div class="row">
 <div class="col-6 col-m-9">
 	  <?php
-	  //echo $_GET['id'];
-	  $idselected = $_GET['id'];
-	  $photo = "photos/nophoto.png";
+	  if (!isset($_GET['id'])){
+		$_GET['id']=NULL;
+		}else{ 
+			$idselected = $_GET['id'];}
+			$photo = "photos/nophoto.png";
 			$tree= "img/1tree.png";
-		if(!$idselected){
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
 					echo "<img src = img/1tree.png>";
@@ -174,7 +175,7 @@ font-size: smaller;
 					echo "<br /> <br /><span style= color:#a05a2c>Tri-Tech Skills - Center Construction Trades.</span>";
 
 					echo "<br /><span style= color:#cc0000;> May 18-20, 2018 <br />Washington State University, Pullman, WA </span>";
-		}
+			}
 		include 'db/db.php';
 		include 'db/error.php';
 		//if (!($connection = mysqli_connect($host,$user, $pass))) die("Could not connect to database");

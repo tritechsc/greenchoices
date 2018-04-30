@@ -66,7 +66,9 @@ z-index:0;
 ?>
 
 <body>
-<header><span style="color:#fff; background-color:#268bd2";>php directory listing</span></header>
+<header><span style="color:#fff; background-color:#268bd2";>
+	 <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "../img/home.png"></a>
+	</span></header>
 <div id="list">
 ADMIM
 <hr />
@@ -81,7 +83,7 @@ ADMIM
 <center>
 
 
-FOR CARL &nbsp;&nbsp;&nbsp; <a href = "https://www.youtube.com/watch?v=EWPFmdAWRZ0">Man in his arrogance - A Great Speech By Carl Sagan</a>
+FOR CARL &nbsp;&nbsp;&nbsp; <a href = "https://www.youtube.com/watch?v=wupToqz1e2g">A Pale Blue Dot by Carl Sagan</a>
 
 </center>
 </footer>

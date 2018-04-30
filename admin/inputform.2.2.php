@@ -39,7 +39,7 @@ div.smalltext{
 
 <body>
 <div id = "content">
-	  <a href = "http://localhost/greenchoices/" class= "menu" ><img src = "../img/home.png"> </a>
+	 <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "../img/home.png"></a>
 MATERIAL DATA INPUT
 <br />
 <?php
