@@ -204,7 +204,7 @@ font-size: smaller;
 			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
 
-      $photo = "photos/". $row[2]."_".$row[3].".png";
+
 
 			echo "<div class = dataoutline>";
 				echo "<div class =label >CATAGORY : ";
