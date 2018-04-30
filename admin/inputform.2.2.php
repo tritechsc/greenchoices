@@ -11,7 +11,7 @@ include 'db/error.php';
 <style>
 body {margin: 0; padding: 0;
 background-color: #ffffff;
-color:#000;
+color:#  000;
 font-family:"Arial","sans-serif";color:#700070;font-size:14px;}
 pre{margin: 0; padding: 0;font-family:"Arial","sans-serif";color:#000000;font-size:14px;}
 
