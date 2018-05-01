@@ -36,14 +36,16 @@ html {
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+
 .menu li:hover {
     background-color: #f00;
 }
-a{		   font-family: Arial, Helvetica, sans-serif;
-		color: #000;
-		  font-size: 18px;
-		    font-weight: 900;
-		    text-decoration: none;
+
+a{font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	font-size: 18px;
+	font-weight: 900;
+	text-decoration: none;
 }
 
 
@@ -68,9 +70,9 @@ a{		   font-family: Arial, Helvetica, sans-serif;
 }
 //cwc
 #content{
-position:absolute;
-left:10px;
-top:10px;
+	position:absolute;
+	left:10px;
+	top:10px;
 }
 
 div.label {
@@ -126,39 +128,29 @@ div.dataoutline{
 <body>
 
 <div class="row">
-  <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
+	<a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
 </div>
 <div class = "row">
-<div class="col-m-12">
+	<div class="col-m-12">
+		<?php
+			include 'db/db.php';
+			include 'db/error.php';
 
+			$connection = mysqli_connect($host,$dbuser,$dbpass);
+			mysqli_select_db($connection,$dbname);
+			$sql = "select * from building.materials";
+			$result = mysqli_query ($connection,$sql);
+			$therows = mysqli_num_rows($result);
+			//echo "$therows items selected. <br />";//debug
+			echo "<div id = content>";
+			while ($row = mysqli_fetch_row($result)){
+				$photo = "photos/nophoto.png";
 
-
-<?php
-		include 'db/db.php';
-		include 'db/error.php';
-
-		$connection = mysqli_connect($host,$dbuser,$dbpass);
-		mysqli_select_db($connection,$dbname);
-		$sql = "select * from building.materials";
-		$result = mysqli_query ($connection,$sql);
-		$therows = mysqli_num_rows($result);
-		//echo "$therows items selected. <br />";//debug
-		echo "<div id = content>";
-		while ($row = mysqli_fetch_row($result)){
-			$photo = "photos/nophoto.png";
-
-    //    if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-  	//		if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $tree= "img/1tree.png";      }
-  	//		if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-  	//		if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-
-  	//		if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png"; }
-  	//		if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
-  	//		if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
-
-  	//		if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
-  	//		if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
-  	//		if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+			$tree = "img/1tree.png";      
+			if (($row[14]) == 2)$tree = "img/2tree.png";   
+			if (($row[14]) == 3)$tree = "img/3tree.png";   
+			if (($row[14]) == 4)$tree = "img/4tree.png";   
+			if (($row[14]) == 5)$tree = "img/5tree.png";   
           $photo = "photos/". $row[2]."_".$row[3].".png";
           echo "<hr />";
           echo $photo;

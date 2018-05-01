@@ -190,19 +190,11 @@ font-size: smaller;
 		//echo "$therows items selected. <br />";//debug
 		echo "<div id = content>";
 		while ($row = mysqli_fetch_row($result)){
-
-			if (($row[3]) == 1001){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-			if (($row[3]) == 1002){$photo = "photos/apples.jpg"; $tree= "img/1tree.png";      }
-			if (($row[3]) == 1003){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-			if (($row[3]) == 1004){$photo = "photos/apples.jpg"; $tree = "img/1tree.png";      }
-
-			if (($row[3]) == 2001){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png"; }
-			if (($row[3]) == 2002){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
-			if (($row[3]) == 2003){$photo = "photos/bananas.jpg"; $tree = "img/1tree.png";      }
-
-			if (($row[3]) == 3001){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
-			if (($row[3]) == 3002){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
-			if (($row[3]) == 3003){$photo = "photos/lettuce.jpg"; $tree = "img/1tree.png";      }
+			$tree = "img/1tree.png";      
+			if (($row[14]) == 2)$tree = "img/2tree.png";   
+			if (($row[14]) == 3)$tree = "img/3tree.png";   
+			if (($row[14]) == 4)$tree = "img/4tree.png";   
+			if (($row[14]) == 5)$tree = "img/5tree.png";   
 
       $photo = "photos/". $row[2]."_".$row[3].".png";
 

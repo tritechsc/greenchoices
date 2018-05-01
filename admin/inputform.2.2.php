@@ -19,7 +19,7 @@ pre{margin: 0; padding: 0;font-family:"Arial","sans-serif";color:#000000;font-si
 #content{
 font-family: Arial, Helvetica, sans-serif;
 font-size: 14px;
-color: #330099;
+color: #000;
 background-color:white;
 position:absolute;
 left:350px;
@@ -40,8 +40,6 @@ div.smalltext{
 <body>
 <div id = "content">
 	 <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "../img/home.png"></a>
-MATERIAL DATA INPUT
-<br />
 <?php
 //echo " host dbuser dbpass <br />"; //echo "$host $dbuser $dbpass <br />";
 $connection = mysqli_connect($host, $dbuser, $dbpass) or die("Could not connect to database server");
@@ -61,17 +59,16 @@ mysqli_select_db($connection,$dbname) or die("Could not select database");
 	$row = mysqli_fetch_row($result);
 	$time = $row[0];
 
-
-	echo "$date $time <br>";
-
 	$str_time = $time;
 	$str_date = $date;
 	$timedate = $time." ".$date;
-echo "$timedate <br>";
+	echo "MATERIAL DATA INPUT ";
+	echo "$timedate <br />";
 
 
 if(isset($_POST['submit'])){
-	echo" SUMMIT DEBUG";
+	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
+	echo "<hr /> DATA SUBMITTED $timedate <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
 	$last_input = 	$_POST['last'];
 	$first_input = 	$_POST['first'];
 	$catagory_input = $_POST['catagory'];
@@ -89,30 +86,7 @@ if(isset($_POST['submit'])){
 	$rating_input = $_POST['rating'];
 	$comments_input = $_POST['comments'];
 	}
-/*
 
-	CREATE TABLE IF NOT EXISTS `materials` (
-  `last` varchar(64) NOT NULL,
-  `first` varchar(1) NOT NULL,
-  `catagory` varchar(16) NOT NULL,
-  `id` varchar(16) NOT NULL,
-  `material` varchar(64) NOT NULL,
-  `location` varchar(64) NOT NULL,
-  `delivery_method` varchar(64) NOT NUL	//L,
-  `eco_impact` varchar(64) NOT NULL,
-  `delivery_distance` varchar(64) NOT NULL,
-  `co2_footprint` varchar(64) NOT NULL,
-  `labor_source` varchar(64) NOT NULL,
-  `hazardous_chemicals` varchar(64) NOT NULL,
-  `durability` varchar(64) NOT NULL,
-  `rf_rating` varchar(64) NOT NULL,
-	`rating` varchar(1) NOT NULL,
-  `comments` text NOT NULL,
-  `date_time` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-*/
 //	echo "<hr />";
 	//$insert0 = "INSERT INTO `materials` (`last`, `first`, `food_type`, `food_id`, `fert_quantity`, `fert_type`, `pest_quantity`, `pest_type`, `pest_interval`, `water_quantity`, `water_type`, `water_interval`, `delivery_method`, `delivery_distance`, `delivery_waste`, `gmo`, `comments`, `date_time`) VALUES ";
 	//('COLEMAN', 'C', 'Z', '1000', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'COMMENT', '0424');
@@ -138,10 +112,10 @@ if(isset($_POST['submit'])){
 
 	$sql_insert = $insert0.$insert1;
 	//echo "<hr />";
-	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
-	echo "<hr /> DATA SUBMITTED $timedate; <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
- echo "$sql_insert";
- 	echo "</h4></span><hr />";
+//	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
+//	echo "<hr /> DATA SUBMITTED $timedate <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
+ //echo "$sql_insert";
+ 	echo "</h4></span>";
 //$result =  mysqli_query($sql_insert, $connection)  or showerror();
 	 $result = mysqli_query($connection,$sql_insert);
 	mysqli_close($connection);
@@ -154,7 +128,7 @@ if(isset($_POST['submit'])){
 											<option value="FLOORING">FLOORING</option>
 											<option value="COUNTER_TOPS">COUNTER TOP</option>
 											<option value="INSULATION">INSULATION</option>
-											<option value="WINDOWS">INSULATION</option>
+											<option value="WINDOWS">WINDOWS</option>
 									</select>
 	ID 						<input type="text" name="id" maxlength="64">
 	MATERIAL				<input type="text" name="material" maxlength="64">
@@ -172,12 +146,10 @@ if(isset($_POST['submit'])){
 </pre>
 <input type="submit" name="submit" value="Submit" />
 </form>
-<pre>
-	<div class = "smalltext">
-			NOTES:
 
-</div>
-</pre>
+	<div class = "smalltext">
+		
+	</div>
 
 </div>
 
