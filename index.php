@@ -171,7 +171,7 @@ font-size: smaller;
 			?>
 			<div class = "imgleft"><img src="img/5tree.png" /></div>
 			<span style= color:#008000;c>&nbsp;&nbsp;Think about what you're purchasing and how it affects the ENVIRONMENT.</span><br />
-			<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson<br /> &nbsp;&nbsp;Nickolas <br /> &nbsp;&nbsp;Salvador Corona <br />&nbsp;&nbsp;Brian Leon  </span> 
+			<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson<br /> &nbsp;&nbsp;Nickolas Johnson <br /> &nbsp;&nbsp;Salvador Corona <br />&nbsp;&nbsp;Brian Leon  </span> 
 			<br /><span style= color:#008000;>&nbsp;&nbsp;Tri-Tech Skills - Center Construction Trades.</span>
 		
 			<?php
