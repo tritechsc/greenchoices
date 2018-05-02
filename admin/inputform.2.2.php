@@ -114,7 +114,7 @@ if(isset($_POST['submit'])){
 	//echo "<hr />";
 //	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
 //	echo "<hr /> DATA SUBMITTED $timedate <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
- //echo "$sql_insert";
+echo "$sql_insert";
  	echo "</h4></span>";
 //$result =  mysqli_query($sql_insert, $connection)  or showerror();
 	 $result = mysqli_query($connection,$sql_insert);
@@ -148,7 +148,7 @@ if(isset($_POST['submit'])){
 </form>
 
 	<div class = "smalltext">
-		
+
 	</div>
 
 </div>
