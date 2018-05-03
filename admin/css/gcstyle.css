@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
 * {
     box-sizing: border-box;
 }
@@ -19,7 +14,7 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 .header {
-    background-color: #008f00;
+    background-color: #000;
     color: #ffffff;
     padding: 1px;
 }
@@ -35,28 +30,29 @@ html {
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+
 .menu li:hover {
     background-color: #f00;
 }
-a{		   font-family: Arial, Helvetica, sans-serif;
-		color: #008f00;
-		  font-size: 14px;
-		    font-weight: 900;
-		    text-decoration: none;
+
+a{font-family: Arial, Helvetica, sans-serif;
+	color: #f00;
+	font-size: 18px;
+	font-weight: 900;
+	text-decoration: none;
 }
 
 
 .aside {
-    background-color: #008f00;
+    background-color: #111;
     padding: 3px;
     color: #ffffff;
     text-align: center;
-      font-weight: 900;
     font-size: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .footer {
-    background-color: #008f00;
+    background-color: #0000ff;
     color: #ffffff;
     text-align: center;
     font-size: 12px;
@@ -68,9 +64,9 @@ a{		   font-family: Arial, Helvetica, sans-serif;
 }
 //cwc
 #content{
-position:absolute;
-left:10px;
-top:10px;
+	position:absolute;
+	left:10px;
+	top:10px;
 }
 
 div.label {
@@ -121,31 +117,3 @@ div.dataoutline{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 }
-</style>
-</head>
-<body>
-
-FLOORING <br />
-1001<img src ="qrcodes/1001.png">
-1002 <img src ="qrcodes/1002.png">
-1003  <img src ="qrcodes/1003.png">
-1004  <img src ="qrcodes/1004.png">
-  <hr />
-COUNTER TOPS <br />
-2001  <img src ="qrcodes/2001.png">
-2002  <img src ="qrcodes/2002.png">
-2003  <img src ="qrcodes/2003.png">
- <hr />
- INSULATION <br />
-3001 <img src ="qrcodes/3001.png">
-3002 <img src ="qrcodes/3002.png">
-3003 <img src ="qrcodes/3003.png">
-<hr />
-
-
-
-QRCODES LOCATED AT:
-<a href = "https://github.com/tritechsc/greenchoices/tree/master/codes/qrcode" target = "_blank">https://github.com/tritechsc/greenchoices/tree/master/codes/qrcode</a>
-</body>
-</html>
-</html>
