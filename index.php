@@ -255,13 +255,9 @@ MATERIAL CODES<br />
 	<li><a href= "index.php?id=2002" class= "menu">COUNTER TOPS:2002</a> </li>
 	<li><a href= "index.php?id=2003" class= "menu">COUNTER TOPS:2003</a> </li>
 	<hr />
-	<li><a href= "index.php?id=3001" class= "menu">INSULATION:3001</a> </li>
+  	<li><a href= "index.php?id=3001" class= "menu">INSULATION:3001</a> </li>
 	<li><a href= "index.php?id=3002" class= "menu">INSULATION:3002</a> </li>
 	<li><a href= "index.php?id=3003" class= "menu">INSULATION:3003</a> </li>
-	<hr />
-  <li><a href= "index.php?id=4001" class= "menu">WINDOW:4001</a> </li>
-	<li><a href= "index.php?id=4002" class= "menu">WINDOW:4002</a> </li>
-	<li><a href= "index.php?id=4003" class= "menu">WINDOW:4003</a> </li>
   <hr />
 	<li><a href= "selectall.php" class= "menu">SHOW ALL DATA</a> </li>
   </ul>
