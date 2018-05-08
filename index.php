@@ -152,8 +152,7 @@ font-size: smaller;
 
 <div class="header">
     <h3>  <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
-&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project <a href = "codes/">[CODES]</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/">[ADMIN]</a>
-<br />
+&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project <img src="img/1tree.png" /><a href = "codes/">CODES</a> <img src="img/1tree.png" /><a href = "admin/">ADMIN</a> <img src="img/1tree.png" /><br />
 &nbsp;&nbsp;<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson &nbsp;&nbsp;Nickolas Johnson &nbsp;&nbsp;Salvador Corona &nbsp;&nbsp;Brian Leon  </span>
 </h3>
 </div>
@@ -168,7 +167,7 @@ font-size: smaller;
 			// html intro image and text
 			?>
       <span style= color:#008000;c>&nbsp;&nbsp;Think about what you're purchasing and how it affects the ENVIRONMENT.</span><br />
-      <br />&nbsp;&nbsp;NOTE: TOTAL CARBON DIOXIDE FOOTPRINT is for deleivey of material.
+      <br />&nbsp;&nbsp;NOTE: TOTAL CARBON DIOXIDE FOOTPRINT is for the deleivey of material.
 			<?php
 		}
 		include 'db/db.php';
@@ -263,7 +262,7 @@ MATERIAL CODES<br />
 </div>
 
 <div class="footer">
-<div class = "imgleft"><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /></div>
+
 <br /><span style= color:#008000;>&nbsp;&nbsp;Tri-Tech Skills - Center Construction Trades.</span>
 </div>
 
