@@ -20,7 +20,7 @@ background-color: #deebda;
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui , sans-serif;
     font-weight: 900;
 }
 
@@ -152,11 +152,9 @@ font-size: smaller;
 
 <div class="header">
     <h3>  <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
-&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-<a href = "codes/"> CODES </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/"> ADMIN </a>
+&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project <a href = "codes/">[CODES]</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "admin/">[ADMIN]</a>
+<br />
+&nbsp;&nbsp;<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson &nbsp;&nbsp;Nickolas Johnson &nbsp;&nbsp;Salvador Corona &nbsp;&nbsp;Brian Leon  </span>
 </h3>
 </div>
 
@@ -169,11 +167,8 @@ font-size: smaller;
 		if(!$idselected){
 			// html intro image and text
 			?>
-			<div class = "imgleft"><img src="img/5tree.png" /></div>
-			<span style= color:#008000;c>&nbsp;&nbsp;Think about what you're purchasing and how it affects the ENVIRONMENT.</span><br />
-			<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson<br /> &nbsp;&nbsp;Nickolas Johnson <br /> &nbsp;&nbsp;Salvador Corona <br />&nbsp;&nbsp;Brian Leon  </span>
-			<br /><span style= color:#008000;>&nbsp;&nbsp;Tri-Tech Skills - Center Construction Trades.</span>
-      <br />NOTE: TOTAL CARBON DIOXIDE FOOTPRINT is for deleivey of material.
+      <span style= color:#008000;c>&nbsp;&nbsp;Think about what you're purchasing and how it affects the ENVIRONMENT.</span><br />
+      <br />&nbsp;&nbsp;NOTE: TOTAL CARBON DIOXIDE FOOTPRINT is for deleivey of material.
 			<?php
 		}
 		include 'db/db.php';
@@ -229,7 +224,7 @@ font-size: smaller;
 				  echo "<div class =label >COMMENTS : ";
 					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
 
-				echo "$row[0] $row[1]";
+				echo "$row[0] $row[1]  CONFIRMATION # $row[17]";
 
 				echo "</div><br />";
 		}
@@ -268,7 +263,8 @@ MATERIAL CODES<br />
 </div>
 
 <div class="footer">
-  <p> Tri-Tech Constrcution Trades Program</p>
+<div class = "imgleft"><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /><img src="img/1tree.png" /></div>
+<br /><span style= color:#008000;>&nbsp;&nbsp;Tri-Tech Skills - Center Construction Trades.</span>
 </div>
 
 </body>
