@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION["thevalue"] = "one";
+echo "Session variables are set.";
  ?>
 <!DOCTYPE html>
 <html>
@@ -60,8 +62,9 @@ a{
 				echo "CATAGORY : $row[2] ID: $row[3]";
 				echo " - CONFIRMATION NUMBER : <a href = 'delete-item.php'>&nbsp;&nbsp;&nbsp;&nbsp;$row[17] &nbsp;&nbsp;&nbsp;&nbsp;</a> ";
 				$delete_this_item[$count] = $row[17];
-				$_SESSION[$thecount] = $count;
-				$_SESSION["delete_this_item[$thecount]"] = $row[17];
+			//	$_SESSION[$thecount] = $count;
+				//$_SESSION["delete_this_item[$count]"] = $row[17];
+				$_SESSION[$delete_this_item];
 				echo "- CHECK - $delete_this_item[$count] <br />";
 				echo "</div>";
 				$count = $count + 1;

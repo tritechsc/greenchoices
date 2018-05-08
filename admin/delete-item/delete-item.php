@@ -1,7 +1,7 @@
 <?php
 session_start();
 //echo "$_SESSION["delete_this_item"]";
-echo "$_SESSION[thecount]";
+echo $_SESSION["delete_this_item"];
 
 ?>
 <!DOCTYPE html>
