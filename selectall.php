@@ -159,7 +159,10 @@ div.dataoutline{
 				echo "<div class =label >CATAGORY : ";
 					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $tree></div>";
 				echo "<div class =label >ID	: ";
-					echo "<span style=color:#000;font-weight:bold>$row[3] </span></div>";
+				echo "<span style=color:#000;font-weight:bold>$row[3] </span>";
+				  echo "CONFIRMATION NUMBER : ";
+					echo "<span style=color:#ff7f00;font-weight:bold>$row[17] </span></div>";
+				
 				echo "<div class =label >MATERIAL : ";
 					echo "<span style=color:#000;font-weight:bold>$row[4] </span></div>";
 				echo "<div class =label >LOCATION : ";
@@ -184,6 +187,8 @@ div.dataoutline{
 					echo "<span style=color:#000;font-weight:bold>$row[14] </span></div>";
 				  echo "<div class =label >COMMENTS : ";
 					echo "<span style=color:#000;font-weight:bold>$row[15] </span></div>";
+					  echo "<div class =label >DATE TIME : ";
+					echo "<span style=color:#000;font-weight:bold>$row[16] </span></div>";
 
 				echo "$row[0] $row[1]";
 
