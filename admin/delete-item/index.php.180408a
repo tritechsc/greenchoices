@@ -47,7 +47,6 @@ a{
 			include '../db/error.php';
 		//	$_SESSION[delete_this_item];
 			$delete_this_item = array();
-			$thecount = 0;
 			$connection = mysqli_connect($host,$dbuser,$dbpass);
 			mysqli_select_db($connection,$dbname);
 			$sql = "select * from building.materials";
