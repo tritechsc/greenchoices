@@ -1,25 +1,48 @@
-<?php
-session_start();
-//echo "$_SESSION["delete_this_item"]";
-echo "$_SESSION[thecount]";
 
-?>
 <!DOCTYPE html>
 <html>
 <head><title> Delete Items</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/gcstyle.css" rel="stylesheet">
+<link href="../css/gcstyle.css" rel="stylesheet">
+<style>
+a{
+	background-color: #cb4b16;
+	color: #fff;
+
+}
+.even{
+	background-color: #eee8d5;
+	color: #000;
+}
+
+.odd{
+	background-color:  #fdf6e3;
+	color: #000;
+
+}
+
+.confirm{
+	background-color:  #2aa198;
+	color: #000;
+
+
+}
+
+</style>
+
 </head>
 <body>
-
 <div class="row">
 	<a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "../../img/home.png"> </a>
+	&nbsp;&nbsp;<h1>DELETE AN ITEM BY CONFIRMATION NUMBER. </h1>
 </div>
 <div class = "row">
+
+
 	<div class="col-m-12">
 		<?php
-			include 'db/db.php';
-			include 'db/error.php';
+			include '../db/db.php';
+			include '../db/error.php';
 
 			$connection = mysqli_connect($host,$dbuser,$dbpass);
 			mysqli_select_db($connection,$dbname);
@@ -27,9 +50,15 @@ echo "$_SESSION[thecount]";
 			$result = mysqli_query ($connection,$sql);
 			$therows = mysqli_num_rows($result);
 			//echo "$therows items selected. <br />";//debug
+			$count = 0;
 			while ($row = mysqli_fetch_row($result)){
-				echo "CATAGORY : $row[2]   ID : <a href = '$row[3]'>$row[3] </a> $row[0] $row[1] ";
-				echo " TIME DATE  <a href = 'confirm-delete.php?d=$row[16]'>[ $row[16] ]</a> <br />";
+				$rowcolor = "even";
+				if ($count % 2 == 0)$rowcolor = "odd";
+				echo "<div class = $rowcolor>";
+				echo "CATAGORY : $row[2] ID: $row[3] ";
+				echo " - CONFIRMATION NUMBER : <a href = 'delete.php'>&nbsp;&nbsp;&nbsp;&nbsp;$row[17] &nbsp;&nbsp;&nbsp;&nbsp;</a> <br />";
+				echo "</div>";
+				$count = $count + 1;
 		}
 		mysqli_close($connection);
 

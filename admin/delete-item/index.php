@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head><title> Delete Items</title>
@@ -37,13 +39,13 @@ a{
 	&nbsp;&nbsp;<h1>DELETE AN ITEM BY CONFIRMATION NUMBER. </h1>
 </div>
 <div class = "row">
-
-
 	<div class="col-m-12">
 		<?php
 			include '../db/db.php';
 			include '../db/error.php';
-
+		//	$_SESSION[delete_this_item];
+			$delete_this_item = array();
+			$thecount = 0;
 			$connection = mysqli_connect($host,$dbuser,$dbpass);
 			mysqli_select_db($connection,$dbname);
 			$sql = "select * from building.materials";
@@ -55,8 +57,12 @@ a{
 				$rowcolor = "even";
 				if ($count % 2 == 0)$rowcolor = "odd";
 				echo "<div class = $rowcolor>";
-				echo "CATAGORY : $row[2] ID: $row[3] ";
-				echo " - CONFIRMATION NUMBER : <a href = 'delete.php'>&nbsp;&nbsp;&nbsp;&nbsp;$row[17] &nbsp;&nbsp;&nbsp;&nbsp;</a> <br />";
+				echo "CATAGORY : $row[2] ID: $row[3]";
+				echo " - CONFIRMATION NUMBER : <a href = 'delete-item.php'>&nbsp;&nbsp;&nbsp;&nbsp;$row[17] &nbsp;&nbsp;&nbsp;&nbsp;</a> ";
+				$delete_this_item[$count] = $row[17];
+				$_SESSION[$thecount] = $count;
+				$_SESSION["delete_this_item[$thecount]"] = $row[17];
+				echo "- CHECK - $delete_this_item[$count] <br />";
 				echo "</div>";
 				$count = $count + 1;
 		}

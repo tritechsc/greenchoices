@@ -56,7 +56,7 @@ z-index:0;
     if ($handle = opendir('.')) {
     while (false !== ($file = readdir($handle)))
     {
-        if ($file != "." && $file != ".."&& $file != "index.php"&&$file != "db"&&$file != ".htaccess")
+        if ($file != "." && $file != ".."&& $file != "index.php"&&$file != "db"&&$file != ".htaccess" && $file != "css")
         {
             $thelist .= '<li><a href="'.$file.'" target = "_blank">'.$file.'</a></li>';
         }
