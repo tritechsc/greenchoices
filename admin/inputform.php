@@ -25,19 +25,6 @@ position:absolute;
 left:350px;
 top:10px;
 }
-
-
-.even{
-	background-color: #cccc00;
-	color: #000;
-
-}
-
-.odd{
-	background-color: #b1b100;
-	color: #000;
-
-}
 </style>
 
 
@@ -133,22 +120,22 @@ echo "$sql_insert";
 	LAST NAME					<input type="text" name="last" maxlength="64">
 	FIRST INITIAL			<input type="text" name="first" maxlength="1">
 	CATAGORY				<select name="catagory">
-											<option value="FLOORING">FLOORING</option>
-											<option value="COUNTER_TOPS">COUNTER TOP</option>
-											<option value="INSULATION">INSULATION</option>
-											<option value="WINDOWS">WINDOWS</option>
-									</select>
-	ID 						<input type="text" name="id" maxlength="64">
+							<option value="FLOORING">FLOORING</option>
+							<option value="COUNTER_TOPS">COUNTER TOP</option>
+							<option value="INSULATION">INSULATION</option>
+							<option value="WINDOWS">WINDOWS</option>
+						</select>
+	ID 					<input type="text" name="id" maxlength="64">
 	MATERIAL				<input type="text" name="material" maxlength="64">
 	LOCATION				<input type="text" name="location" maxlength="64">
-	DELIVERY_METHOD 		<input type="text" name="delivery" maxlength="64">
+	DELIVERY_METHOD 			<input type="text" name="delivery" maxlength="64">
 	ECO_IMPACT 				<input type="text" name="eco_impact" maxlength="64">
-	DELIVERY_DISTANCE 		<input type="text" name="delivery_distance" maxlength="64">
-	C02_FOOTPRINT			<input type="text" name="co2" maxlength="64">
-	LABOR_SOURCE 			<input type="text" name="labor" maxlength="64">
-	HAZARDOUS_CHEMICALS 	<input type="text" name="hazardous" maxlength="64">
+	DELIVERY_DISTANCE 			<input type="text" name="delivery_distance" maxlength="64">
+	C02_FOOTPRINT				<input type="text" name="co2" maxlength="64">
+	LABOR_SOURCE 				<input type="text" name="labor" maxlength="64">
+	HAZARDOUS_CHEMICALS 			<input type="text" name="hazardous" maxlength="64">
 	DURABILITY		 		<input type="text" name="durability" maxlength="64">
-	RF_RATING		 		<input type="text" name="rf_rating" maxlength="64">
+	R-VALUE RATING/IN  		 	<input type="text" name="rf_rating" maxlength="64">
 	RATING		 			<input type="text" name="rating" maxlength="1    ">
 	COMMENTS   				<textarea rows="4" cols="50" name="comments" >Type comments or remove this this text.</textarea>
 </pre>
