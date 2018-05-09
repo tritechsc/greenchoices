@@ -152,9 +152,7 @@ div.dataoutline{
 			if (($row[14]) == 4)$tree = "img/4tree.png";   
 			if (($row[14]) == 5)$tree = "img/5tree.png";   
           $photo = "photos/". $row[2]."_".$row[3].".png";
-          echo "<hr />";
-          echo $photo;
-            echo "<hr />";
+         
    echo "<div class = dataoutline>";
 				echo "<div class =label >CATAGORY : ";
 					echo "<span style=color:#000;font-weight:bold>$row[2] </span><img src = $photo><img src = $tree></div>";

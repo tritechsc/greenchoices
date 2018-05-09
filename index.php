@@ -152,7 +152,7 @@ font-size: smaller;
 
 <div class="header">
     <h3>  <a href = "http://tritechsc.ksd.org/greenchoices/" class= "menu" ><img src = "img/home.png"> </a>
-&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project <img src="img/1tree.png" /><a href = "codes/">CODES</a> <img src="img/1tree.png" /><a href = "admin/">ADMIN</a> <img src="img/1tree.png" /><br />
+&nbsp;Green Choices - App-Solutely: Tri-Tech Skills Center WSU Imagine Tomorrow Project <img src="img/1tree.png" /><a href = "codes/">CODES</a> <img src="img/1tree.png" /><br />
 &nbsp;&nbsp;<span style= color:#a05a2c> &nbsp;&nbsp;Talmage Jacoson &nbsp;&nbsp;Nickolas Johnson &nbsp;&nbsp;Salvador Corona &nbsp;&nbsp;Brian Leon  </span>
 </h3>
 </div>

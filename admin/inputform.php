@@ -62,22 +62,22 @@ mysqli_select_db($connection,$dbname) or die("Could not select database");
 if(isset($_POST['submit'])){
 	echo "<h1><span style=color:#ff7f00;font-weight:bold>";
 	echo "<hr /> DATA SUBMITTED $timedate <hr /></h1><h4></span><span style=color:#ff9f00;font-weight:bold>";
-	$last_input = 	$_POST['last'];
-	$first_input = 	$_POST['first'];
-	$catagory_input = $_POST['catagory'];
-	$id_input = $_POST['id'];
-	$material_input = $_POST['material'];
-	$location_input = $_POST['location'];
-	$delivery_input = $_POST['delivery'];
-	$eco_impact_input = $_POST['eco_impact'];
-	$delivery_distance_input = $_POST['delivery_distance'];
-	$co2_footprint_input = $_POST['co2'];
-	$labor_source_input = $_POST['labor'];
-	$hazardous_chemicals_input= $_POST['hazardous'];
-	$durability_input = $_POST['durability'];
-	$rf_rating_input = $_POST['rf_rating'];
-	$rating_input = $_POST['rating'];
-	$comments_input = $_POST['comments'];
+	$last_input = 	mysqli_real_escape_string($connection,$_POST['last']);
+	$first_input = 	mysqli_real_escape_string($connection,$_POST['first']);
+	$catagory_input = mysqli_real_escape_string($connection,$_POST['catagory']);
+	$id_input = mysqli_real_escape_string($connection,$_POST['id']);
+	$material_input = mysqli_real_escape_string($connection,$_POST['material']);
+	$location_input = mysqli_real_escape_string($connection,$_POST['location']);
+	$delivery_input = mysqli_real_escape_string($connection,$_POST['delivery']);
+	$eco_impact_input = mysqli_real_escape_string($connection,$_POST['eco_impact']);
+	$delivery_distance_input = mysqli_real_escape_string($connection,$_POST['delivery_distance']);
+	$co2_footprint_input = mysqli_real_escape_string($connection,$_POST['co2']);
+	$labor_source_input = mysqli_real_escape_string($connection,$_POST['labor']);
+	$hazardous_chemicals_input= mysqli_real_escape_string($connection,$_POST['hazardous']);
+	$durability_input = mysqli_real_escape_string($connection,$_POST['durability']);
+	$rf_rating_input = mysqli_real_escape_string($connection,$_POST['rf_rating']);
+	$rating_input = mysqli_real_escape_string($connection,$_POST['rating']);
+	$comments_input = mysqli_real_escape_string($connection,$_POST['comments']);
 	}
 
 //	echo "<hr />";
@@ -112,7 +112,7 @@ if(isset($_POST['submit'])){
 echo "$sql_insert";
  	echo "</h4></span>";
 //$result =  mysqli_query($sql_insert, $connection)  or showerror();
-	 $result = mysqli_query($connection,$sql_insert);
+	 $result = mysqli_query($connection,$sql_insert) or showerror();
 	mysqli_close($connection);
 ?>
 <form action="#" method="post">
@@ -133,11 +133,11 @@ echo "$sql_insert";
 	DELIVERY_DISTANCE 			<input type="text" name="delivery_distance" maxlength="64">
 	C02_FOOTPRINT				<input type="text" name="co2" maxlength="64">
 	LABOR_SOURCE 				<input type="text" name="labor" maxlength="64">
-	HAZARDOUS_CHEMICALS 			<input type="text" name="hazardous" maxlength="64">
+	HAZARDOUS_CHEMICALS 			<textarea rows="4" cols="64" name="hazardous" ></textarea>
 	DURABILITY		 		<input type="text" name="durability" maxlength="64">
 	R-VALUE RATING/IN  		 	<input type="text" name="rf_rating" maxlength="64">
 	RATING		 			<input type="text" name="rating" maxlength="1    ">
-	COMMENTS   				<textarea rows="4" cols="50" name="comments" >Type comments or remove this this text.</textarea>
+	COMMENTS   				<textarea rows="4" cols="50" name="comments" placeholder= "Type comments here."  ></textarea>
 </pre>
 <input type="submit" name="submit" value="Submit" />
 </form>
